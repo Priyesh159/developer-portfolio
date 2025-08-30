@@ -2,52 +2,46 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Overview
+## Development Commands
 
-This is a Next.js 15.5.0 developer portfolio project using the App Router, TypeScript, and Tailwind CSS. It's a fresh create-next-app template configured with modern tooling including Turbopack for faster development builds.
+- **Development server**: `npm run dev` (uses Turbopack for faster builds)
+- **Build**: `npm run build` (production build with Turbopack)
+- **Start**: `npm start` (starts production server)
+- **Lint**: `npm run lint` (ESLint with Next.js configuration)
 
-## Common Development Commands
+## Project Structure
 
-```bash
-# Development server with Turbopack (faster builds)
-npm run dev
+This is a Next.js 15 portfolio project using the App Router with TypeScript and Tailwind CSS v4.
 
-# Production build with Turbopack
-npm run build
+### Key Architecture
 
-# Start production server
-npm start
+- **Framework**: Next.js 15 with App Router (`src/app/` directory)
+- **Styling**: Tailwind CSS v4 with custom theme configuration in `globals.css`
+- **Fonts**: Geist Sans and Geist Mono loaded from Google Fonts
+- **TypeScript**: Strict mode enabled with path aliases (`@/*` → `./src/*`)
+- **Build tool**: Turbopack enabled for both dev and build commands
 
-# Lint code using ESLint
-npm run lint
+### Project Layout
+
+```
+src/
+  app/
+    layout.tsx    # Root layout with font configuration
+    page.tsx      # Homepage component
+    globals.css   # Tailwind imports and theme variables
+public/           # Static assets (SVG icons)
 ```
 
-## Architecture & Structure
+### Styling System
 
-- **Framework**: Next.js 15.5.0 with App Router architecture
-- **Styling**: Tailwind CSS v4 with PostCSS
-- **Fonts**: Geist and Geist Mono fonts from Google Fonts
-- **TypeScript**: Strict mode enabled with path aliases (`@/*` -> `./src/*`)
+- Uses Tailwind CSS v4 with inline theme configuration
+- Custom CSS variables for background/foreground colors with dark mode support
+- Font variables configured for Geist Sans (`--font-geist-sans`) and Geist Mono (`--font-geist-mono`)
+- Responsive design with `sm:` breakpoints
 
-### Key Directories
+### Development Notes
 
-- `src/app/` - Next.js App Router pages and layouts
-  - `layout.tsx` - Root layout with font configuration
-  - `page.tsx` - Home page component
-  - `globals.css` - Global Tailwind CSS styles
-- `public/` - Static assets (SVG icons)
-
-### Configuration Files
-
-- `next.config.ts` - Next.js configuration (currently minimal)
-- `tsconfig.json` - TypeScript configuration with strict mode and path aliases
-- `eslint.config.mjs` - ESLint configuration extending Next.js rules
-- `postcss.config.mjs` - PostCSS configuration for Tailwind
-
-## Development Notes
-
-- Uses Turbopack for both development and production builds (faster than Webpack)
-- TypeScript strict mode is enabled - all new code should be properly typed
-- ESLint is configured with Next.js and TypeScript rules
-- The project uses CSS-in-JS via Tailwind classes for styling
-- Font optimization is handled automatically via `next/font/google`
+- All builds use Turbopack for performance
+- TypeScript strict mode is enabled
+- ESLint configured with Next.js and TypeScript presets
+- Path aliases configured for clean imports (`@/` prefix)
