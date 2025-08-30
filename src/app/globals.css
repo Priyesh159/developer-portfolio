@@ -1,142 +1,229 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-geist-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  --font-geist-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --background: #ffffff;
+    --foreground: #171717;
+    --font-geist-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    --font-geist-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
 /* Dark mode overrides when class is applied */
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+    --background: #0a0a0a;
+    --foreground: #ededed;
 }
 
 * {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  scroll-behavior: smooth;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 
 /* Custom animations for typewriter effect */
 @keyframes typewriter {
-  from { width: 0; }
-  to { width: 100%; }
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 @keyframes blink {
-  50% { border-color: transparent; }
+    50% {
+        border-color: transparent;
+    }
 }
 
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Smooth transitions for theme changes */
 * {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+    background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.5);
-  border-radius: 4px;
+    background: rgba(59, 130, 246, 0.5);
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(59, 130, 246, 0.7);
+    background: rgba(59, 130, 246, 0.7);
 }
 
 /* Utility classes for animations */
 .animate-slide-up {
-  animation: slideUp 0.8s ease-out;
+    animation: slideUp 0.8s ease-out;
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .animate-slide-in-left {
-  animation: slideInLeft 0.6s ease-out;
+    animation: slideInLeft 0.6s ease-out;
 }
 
 .animate-slide-in-right {
-  animation: slideInRight 0.6s ease-out;
+    animation: slideInRight 0.6s ease-out;
+}
+
+
+/* Theming data attributes */
+[data-theme="light"] {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+[data-theme="dark"] {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+}
+
+/* Extended palette tokens for each theme (primary, secondary, border, interactive) */
+[data-theme="light"] {
+    --primary: #2563eb;
+    --secondary: #7c3aed;
+    --border: #e5e7eb;
+    --interactive: #0ea5e9;
+}
+
+[data-theme="dark"] {
+    --primary: #38bdf8;
+    --secondary: #a78bfa;
+    --border: #1f2937;
+    --interactive: #22d3ee;
+}
+
+[data-theme="warm"] {
+    --background: #fff8f1;
+    --foreground: #3b2f2f;
+    --primary: #d97706;
+    --secondary: #ea580c;
+    --border: #f1e4d6;
+    --interactive: #fb923c;
+}
+
+[data-theme="cool"] {
+    --background: #f1f5f9;
+    --foreground: #0f172a;
+    --primary: #0ea5e9;
+    --secondary: #14b8a6;
+    --border: #e2e8f0;
+    --interactive: #38bdf8;
+}
+
+[data-theme="high-contrast"] {
+    --background: #000000;
+    --foreground: #ffffff;
+    --primary: #ffcc00;
+    --secondary: #00e5ff;
+    --border: #ffffff;
+    --interactive: #ff2d55;
+}
+
+[data-theme="forest"] {
+    --background: #0b1410;
+    --foreground: #e2f7ea;
+    --primary: #22c55e;
+    --secondary: #16a34a;
+    --border: #123524;
+    --interactive: #34d399;
+}
+
+[data-theme="ocean"] {
+    --background: #eef7fb;
+    --foreground: #082f49;
+    --primary: #0284c7;
+    --secondary: #0ea5e9;
+    --border: #cfe6f2;
+    --interactive: #22d3ee;
+}
+
+[data-theme="sunset"] {
+    --background: #fff4ec;
+    --foreground: #3a2222;
+    --primary: #f97316;
+    --secondary: #ef4444;
+    --border: #fde1cf;
+    --interactive: #fb7185;
 }
